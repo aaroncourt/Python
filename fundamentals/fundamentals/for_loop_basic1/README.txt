@@ -1,0 +1,1 @@
+This assignment was to practice different for loops for Python. The tasks to do are shown as comments.
