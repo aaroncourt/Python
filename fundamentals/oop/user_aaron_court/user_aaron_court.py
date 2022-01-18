@@ -21,13 +21,13 @@ class User:
     def display_balance(self):
         print(f'Hello {self.name}. Your balance is: ${self.balance}.')
 
-    def make_transfer(self, user, amount):
+    def make_transfer(self, other_user, amount):
         self.balance -= amount
         print(f'Hello {self.name}. Your transfer is complete and your new balance is ${self.balance}')
-        user.balance += amount
-        print(f'Hello {user.name}. A transfer was made into your account. Your new balance is ${user.balance}')
+        other_user.balance += amount
+        print(f'Hello {other_user.name}. A transfer was made into your account. Your new balance is ${other_user.balance}')
 
-david_beckham= User('David', 'Beckam')
+david_beckham = User('David', 'Beckam')
 daniel_radcliff = User('Daniel', 'Radcliff')
 halle_berry = User('Halle', 'Berry')
 
