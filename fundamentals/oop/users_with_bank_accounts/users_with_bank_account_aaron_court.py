@@ -3,15 +3,7 @@ class User:
         self.name = first_name + ' ' + last_name
         self.checking = BankAccount(int_rate, amt)
 
-    def make_deposit(self, amount):
-        self.checking.balance += amount
-        return self
-
-    def make_withdrawl(self, amount):
-        self.checking.balance -= amount
-        return self
-
-    def display_balance(self):
+    def display_user_balance(self):
         print(f'Hello {self.name}. Your balance is: ${self.checking.balance}.')
         return self
 
@@ -41,16 +33,17 @@ class BankAccount():
         for accts in cls.all_accts:
             accts.display_acct_info()
 
-    def deposit(self, amt):
-        self.account += amt
+
+    def make_deposit(self, amount):
+        self.balance += amount
         return self
 
-    def withdraw(self, amt):
-        if (self.balance - amt) <= 0:
+    def make_withdrawl(self, amount):
+        if (self.balance - amount) <= 0:
             print('Insufficient funds: Charging a $5 fee.')
             self.balance -= 5
         else:
-            self.balance -= amt
+            self.balance -= amount
         return self
 
     def display_acct_info(self):
@@ -68,5 +61,5 @@ class BankAccount():
 
 tom_holland = User('Tom', 'Holland', .01, 100)
 
-tom_holland.display_balance().make_deposit(25).display_balance()
+tom_holland.checking.display_acct_info().make_deposit(25).display_acct_info().yield_int().display_acct_info
 
