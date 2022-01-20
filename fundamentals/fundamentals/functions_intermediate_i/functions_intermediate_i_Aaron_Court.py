@@ -84,17 +84,12 @@ dojo = {
 }
 def printInfo(some_dict):
     for key in some_dict:
-        index = 0
-        dict_length = len(dojo[key])
+        print(f'{len(dojo[key])} {key.upper()}')
 
-        print(f'{dict_length} {key.upper()}')
-
-        while index < dict_length:
-            print(dojo[key][index])
-            index += 1
+        for item in dojo[key]:
+            print(item)
 
         print(" ")
-
 
 printInfo(dojo)
 
