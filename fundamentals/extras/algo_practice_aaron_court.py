@@ -77,5 +77,36 @@ old_movies(movie_info)
 test_string = "This is a test string.  It is not very long."
 
 def word_count(data):
-    pass
-#split it into a list
+    count = {}
+
+    punctuation = ["!", ".", "?", ",", "-", "\n"]
+    for c in punctuation:
+        if c in data:
+            data = data.replace(c, " ")
+    data = data.replace("  ", " ")
+    print(data)
+
+    for word in data.split(" "):
+        if word != "" or word != " ":
+            word = word.lower()
+            if word not in count:
+                count[word] = 1
+            else:
+                count[word] += 1
+    all_values = count.values()
+    max_count = max(all_values)
+    results = []
+    for key in count:
+        if count[key] == max_count:
+            results.append(key)
+    if len(results) == 0:
+        return "No common word found"
+    elif len(results) == 1:
+        return results[0]
+
+    else:
+        answer = "These are the most common words: \n"
+        for w in results:
+            answer += f"{w}\n"
+
+        return answer
