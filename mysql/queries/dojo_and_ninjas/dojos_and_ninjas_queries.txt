@@ -1,0 +1,15 @@
+USE dojos_and_ninjas;
+INSERT INTO	dojos (name) 
+VALUES ('Coding Dojo'), ('San Francisco Dojo'), ('California Dojo');
+DELETE FROM dojos WHERE id between 1 and 3;
+INSERT INTO dojos (name)
+VALUES ('Oakland Dojo'), ('Marin Dojo'), ('Daly City Dojo');
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Tom', 'Holland', 25, 4), ('Halle', 'Berry', 45, 4), ('Robert', 'Downey Jr.', 55, 4);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Bruce', 'Wayne', 45, 5), ('Clark', 'Kent', 30, 5), ('Diana', 'Prince', 213, 5);
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ('Bill', 'Clinton', 75, 6), ('Barack', 'Obama', 60, 6), ('Joe', 'Biden', 75, 6);
+SELECT * FROM ninjas WHERE dojo_id = 4;
+SELECT * FROM ninjas WHERE dojo_id = 6;
+SELECT * FROM ninjas WHERE id = 9;
