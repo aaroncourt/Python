@@ -1,17 +1,10 @@
-/* header {
-    display: flex;
-    width: 240px;
-    justify-content: center;
-    align-self: center;
-} */
-
 h1 {
-    text-align: right;
+    text-align: center;
 }
 
-#container {
-    display: flex;
-    width: 480px;
+table {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .row{
@@ -19,7 +12,14 @@ h1 {
     width: 480px;
 }
 
-.block {
-    display: flex;
-    width: auto
+.block1 {
+    width: 50px;
+    height: 50px;
+    background-color: cornflowerblue;
+}
+
+.block2 {
+    width: 50px;
+    height: 50px;
+    background-color: cornsilk;
 }
