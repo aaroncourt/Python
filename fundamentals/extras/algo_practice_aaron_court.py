@@ -110,3 +110,31 @@ def word_count(data):
             answer += f"{w}\n"
 
         return answer
+
+
+
+# find two number from list that add to 2020 and return their product
+
+data = [1721,
+        979,
+        366,
+        299,
+        675,
+        1456]
+
+def two_nums(lst):
+    ind1 = 0
+    for i in lst:
+        ind2 = 1
+        while ind2 < len(lst):
+            if lst[ind1] + lst[ind2] == 2020:
+                product = lst[ind1] * lst[ind2]
+                return print(f'The product is {product}')
+            else:
+                ind2 += 1
+        if ind1 == (len(lst)-1):
+            return print('No result!')
+        else:
+            ind1 += 1
+
+two_nums(data)
