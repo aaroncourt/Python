@@ -113,7 +113,7 @@ def word_count(data):
 
 
 
-# find two number from list that add to 2020 and return their product
+# Find two numbers from the list that add to 2020 and return their product.
 
 data = [1721,
         979,
