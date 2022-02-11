@@ -1,3 +1,6 @@
+from cgitb import strong
+
+
 def count_positives(lst):
     pos_count = 0
     for x in lst:
@@ -138,3 +141,36 @@ def two_nums(lst):
             ind1 += 1
 
 two_nums(data)
+
+
+#password checker. Can't be a weak password (ie password, opeansesame, LetMe!n, bill_for_president). Must contain a uppercase and lowercase letter, a number, and a special character (!@#$%^&*)
+
+def strong_password(input):
+    p_word = str(input)
+    special = '!@#$%^&*'
+    weak = ['password','opanseasame','LeMe!n','bill_for_president']
+    if len(p_word) < 8:
+        print ('The password is too short')
+        return False
+    if p_word.isalnum() == True:
+        print('The password requires a special character')
+        return False
+    while x == True:
+        for char in p_word:
+            if char.isupper() == True:
+                x = True
+                continue
+            if char.islower() == True:
+                x = True
+                continue
+            if char.isnumeric() == True:
+                x = True
+                continue
+            if special.find(char) != -1:
+                x = True
+                continue
+            else:
+                x = False
+            
+
+strong_password('password')
