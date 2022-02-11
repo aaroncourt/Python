@@ -16,12 +16,6 @@ def submit():
     session['language'] = request.form['language']
     session['comment'] = request.form['comment']
 
-    results = [
-        session['name'],
-        session['location'],
-        session['language'],
-        session['comment'],
-    ]
     return redirect('/result.html')
 
 @app.route('/result', methods=['GET','POST'],)
