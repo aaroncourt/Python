@@ -22,7 +22,6 @@ class User:
     def get_user(cls, data):
         query = 'SELECT * FROM users WHERE id=%(id)s;'
         results =  MySQLConnection('users_schema').query_db(query, data)
-        print(results)
         return results
 
     @classmethod
