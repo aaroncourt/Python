@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-top justify-content-center justify-content-md-between py-3 mb-4 border-bottom border-dark border-2">
+            <div>
+                <h2>Edit Recipe</h2>
+            </div>
+            <div class="gap-4 text-end d-flex">
+                <form action="/dashboard">
+                    <input type="submit" value="Dashboard" class="btn btn-primary "></input>
+                </form>
+                <form action="/logout">
+                    <input type="submit" value="Logout" class="btn btn-primary "></input>
+                </form>
+            </div>
+        </header>
+
+        <form action="/recipe/edit/submit" method="post" class="d-flex">
+                <input type="hidden" name="recipe_id" value="{{recipe_info.id}}">
+            <div class="col">
+                <div class="mb-3">
+                    <div><label for="name" class="form-label">Name:</label></div>
+                    <input type="text" class="form-text-dark"  name="name" value="{{ recipe_info.name }}">
+                </div>
+
+                <div class="mb-3">
+                    <div><label for="description" class="form-label">Description:</label></div>
+                    <textarea type="text" class="form-text-dark" rows="4" cols="38"  name="description">{{ recipe_info.description }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <div><label for="instructions" class="form-label">Instructions</label></div>
+                    <textarea type="text" class="form-text-dark" rows="4" cols="38" name="instructions">{{ recipe_info.instructions }}</textarea>
+                </div>
+
+                <div>
+                    <input type="submit" class="btn btn-primary my-3"></input>
+                </div>
+
+                <div class="text-danger mt-3">
+                    {% with messages = get_flashed_messages(category_filter=["recipe"]) %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="mb-3">
+                    <div><label for="date_made" class="form-label">Date Made:</label></div>
+                    <input type="date" class="form-text-dark" name="date_made" value="{{ recipe_info.date_made }}">
+                </div>
+    
+                <div class="mb-3 justify-content-around">
+                    <p>Under 30 Minutes?</p>
+                    <div class="d-flex justify-content-start gap-3">
+                        {% if recipe_info.under_30 == 1 %}
+                            <div>
+                                <input type="radio" class="form-text-dark" name="under_30" value="1" checked>
+                                <label for="under_30" class="form-label">Yes</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" class="form-text-dark" name="under_30" value="0">
+                                <label for="under_30" class="form-label">No</label>
+                            </div>
+                        {% elif recipe_info.under_30 == 0 %}
+                            <div>
+                                <input type="radio" class="form-text-dark" name="under_30" value="1">
+                                <label for="under_30" class="form-label">Yes</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" class="form-text-dark" name="under_30" value="0" checked>
+                                <label for="under_30" class="form-label">No</label>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
