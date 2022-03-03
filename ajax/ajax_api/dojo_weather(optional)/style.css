@@ -1,0 +1,188 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#pagecontainer {
+    margin: 0px auto;
+    max-width: 960px;
+    padding: 20px;
+    justify-content: center;
+}
+
+#title-container {
+    background-color: lightskyblue;
+    padding: 20px;
+}
+
+#titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    max-width: 960px;
+}
+
+#city-list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 50%;
+    min-width: 30%;
+    margin-right: 20px;
+    font-size: 1.3em;
+    column-gap: 15px;
+}
+
+.city {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 3px black;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2em;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+#navbar select {
+    font-size: 1.0em;
+    justify-content: center;
+}
+
+#pagetitle {
+    margin: 20px 0px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 125px;
+    row-gap: 15px;
+    text-align: center;
+    background-color: lightgray;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.day {
+    font-size: 1.3em;
+}
+
+.column img {
+    border-radius: 50%;
+    height: 100px;
+}
+
+.weather{
+    font-size: 0.9em;
+}
+
+.temps {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.high {
+    display: flex;
+    color: red;
+}
+
+.low {
+    display: flex;
+    color: blue;
+}
+
+#alert {
+    position: absolute;
+    bottom: 10px;
+    max-width: 917px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    margin: inherit;
+    padding: 20px;
+    background-color: white;
+}
+
+#cookie-alert {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+    border: 2px solid black;
+    max-width: 927px;
+    padding: 15px;
+    position: absolute;
+    bottom: 100px;
+    background-color: lightgray;
+}
+
+#alert-icon {
+    height: 50px;
+}
+
+#alert-text a {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.alert-button {
+    text-align: center;
+    max-height: 45px;
+    padding: 10px;
+    color: black;
+    font-size: 1.1em;
+    background-color: cornflowerblue;
+    border: 3px solid black;
+    box-shadow: 3px 3px black ;
+    cursor: pointer;
+
+    
+}
+
+#city-alert {
+    display: none;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    left: 480px;
+    height: auto;
+    padding: 20px;
+    color: black;
+    background-color: white;
+    border: solid 3px black;
+}
+
+#city-alert-btn {
+    background-color: turquoise;
+    color: white;
+
+}

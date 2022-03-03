@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Court Belt Exam</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="get_weather('san jose,CA,US')">
+<!-- Title Bar -->
+<div id="title-container">
+    <div id="titlebar">
+        <h1>DojoWeather</h1>
+        <div id="city-list">
+            <a class="city" id="burbank" href="#" onclick="get_weather('burbank,CA,US')" value="burbank,CA,US">Burbank</a>
+            <a class="city" id="chicago" href="#" onclick="get_weather('chicago,IL,US')" value="chicago,IL,US">Chicago</a>
+            <a class="city" id="dallas" href="#" onclick="get_weather('dallas,TX,US')" value="dallas,TX,US">Dallas</a>
+        </div>
+    </div>
+</div>
+
+<!-- Page Containter-->
+<div id="pagecontainer">
+<!-- Nav Bar -->
+    <div id="navbar">
+        <h2 id="city_name">San Jose</h2>
+        <p>show temperature in <select name="show temperature in" id="degree" onchange="temperature(this)">
+                <option value="celcius">°C</option>
+                <option value="fahrenheit">°F</option>
+        </select></p>
+    </div>
+
+<!-- Main Content --> 
+    <div id="main">
+        <div class="column">
+            <p class="day" id="date0">Today</p>
+            <img id="icon0" src="assets/some_rain.png" alt="some rain icon">
+            <p class="weather" id="current_desc">some rain</p>
+            <div class="temps">
+                <div class="high">
+                    <p id="high0">24</p>
+                    <p>°</p>
+                </div>
+
+                <div class="low" >
+                    <p id="low0">18</p>
+                    <p>°</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <p class="day" id="date1">Tomorrow</p>
+            <img id="icon1" src="assets/some_sun.png" alt="some sun icon">
+            <p class="weather" id="desc1">some sun</p>
+            <div class="temps">
+                <div class="high">
+                    <p id="high1">27</p>
+                    <p>°</p>
+                </div>
+
+                <div class="low" >
+                    <p id="low1">19</p>
+                    <p>°</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <p class="day" id="date2">Friday</p>
+            <img id="icon2" src="assets/some_clouds.png" alt="some clouds icon">
+            <p class="weather" id="desc2">some clouds</p>
+            <div class="temps">
+                <div class="high">
+                    <p id="high2">21</p>
+                    <p>°</p>
+                </div>
+
+                <div class="low" >
+                    <p id="low2">16</p>
+                    <p>°</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <p class="day" id="date3">Saturday</p>
+            <img id="icon3" src="assets/some_sun.png" alt="some sun icon">
+            <p class="weather" id="desc3">some sun</p>
+            <div class="temps">
+                <div class="high">
+                    <p id="high3">26</p>
+                    <p>°</p>
+                </div>
+
+                <div class="low" >
+                    <p id="low3">21</p>
+                    <p>°</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cookie Alert -->
+    <div id="cookie-alert">
+        <img id="alert-icon" src="assets/cookie.png" alt="Alert Icon">
+
+        <div id="alert-text">
+            <h3>Stop! Cookie time</h3>
+            <p>We use cookies(sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse oure traffic. <span><a href="#">Read more...</a></span></p>
+        </div>  
+
+        <input class="alert-button" type="button" onclick="closeAlert('#cookie-alert')" value="I Accept" >
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
